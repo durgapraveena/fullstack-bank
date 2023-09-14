@@ -65,7 +65,7 @@ pipeline {
         
         stage('Deploy to Conatiner') {
             steps {
-                script {
+                script {    
                     docker.image('docker:20.10').inside('-v /var/lib/jenkins/workspace/Bank:/workspace') {
                         sh """
                             apt-get update
@@ -74,7 +74,9 @@ pipeline {
                             docker-compose up -d
                         """
                     }
+                 }
             }
-        }
+         }
     }
 }
+    
