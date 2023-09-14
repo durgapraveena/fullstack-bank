@@ -8,6 +8,7 @@ pipeline {
     }
     
     environment{
+        HOME = '/var/lib/jenkins'
         SCANNER_HOME= tool 'sonar-scanner'
     }
     
