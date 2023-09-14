@@ -65,8 +65,15 @@ pipeline {
         
         stage('Deploy to Conatiner') {
             steps {
-                sh "npm run compose:up -d"
-                args '/var/lib/jenkins/workspace'
+                script {
+                    docker.image('docker:20.10').inside('-v /var/lib/jenkins/workspace/Bank:/workspace') {
+                        sh """
+                            apt-get update
+                            apt-get install -y docker-compose
+                            cd /workspace/app
+                            docker-compose up -d
+                        """
+                    }
             }
         }
     }
