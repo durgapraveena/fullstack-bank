@@ -64,7 +64,7 @@ pipeline {
         
         stage('Deploy to Conatiner') {
             steps {
-                sh "sudo -E npm run compose:up -d"
+                sh "npm run compose:up -d"
             }
         }
     }
