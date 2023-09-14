@@ -66,7 +66,7 @@ pipeline {
         stage('Deploy to Conatiner') {
             steps {
                 sh "npm run compose:up -d"
-                args '/var/lib/jenkins/workspace/Bank'
+                args '/var/lib/jenkins/workspace'
             }
         }
     }
