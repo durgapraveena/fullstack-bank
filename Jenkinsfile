@@ -65,7 +65,7 @@ pipeline {
         
         stage('Deploy to Container') {
             environment {
-                WORKSPACE = '/var/lib/jenkins/workspace'
+                WORKSPACE = '/var/lib/jenkins/workspace/Bank/app'
             }
             steps {
                 sh "npm run compose:up -d --workspace=$WORKSPACE"
