@@ -67,7 +67,7 @@ pipeline {
         stage('Deploy to Container') {
             steps {
                 dir('/var/lib/jenkins/workspace/Bank/app') {
-                    sh "npm run compose:up -d"
+                    sh '/usr/local/bin/docker-compose up -d'
                 }
             }
         }
