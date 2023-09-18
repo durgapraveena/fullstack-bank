@@ -10,6 +10,7 @@ pipeline {
     environment{
         HOME = '/var/lib/jenkins'
         SCANNER_HOME= tool 'sonar-scanner'
+        PATH = "$PATH:/usr/local/bin"
     }
     
     stages {
